@@ -1,3 +1,4 @@
+//game logic and tracking the ships
 const model = {
   boardSize: 7,
   numShips: 3,
@@ -9,7 +10,7 @@ const model = {
     { locations: [0, 0, 0], hits: ["", "", ""] },
     { locations: [0, 0, 0], hits: ["", "", ""] },
   ],
-
+// method for pew pew pew
   fire(guess) {
     for (let i = 0; i < this.numShips; i++) {
       const ship = this.ships[i];
@@ -165,6 +166,7 @@ function handleFireButton() {
 }
 
 function handleKeyPress(e) {
+    // old shit you don't need
     // const fireButton = document.getElementById("fireButton");
 
     // e = e || window.event; old browswers, in modern browsers window.event is not defined, and this is not necessary. this is a fallback to maintain compatiblity basically

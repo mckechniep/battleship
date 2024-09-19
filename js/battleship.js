@@ -165,9 +165,9 @@ function handleFireButton() {
 }
 
 function handleKeyPress(e) {
-  //   const fireButton = document.getElementById("fireButton");
+    // const fireButton = document.getElementById("fireButton");
 
-  //   e = e || window.event; old browswers, in modern browsers window.event is not defined, and this is not necessary. this is a fallback to maintain compatiblity basically
+    // e = e || window.event; old browswers, in modern browsers window.event is not defined, and this is not necessary. this is a fallback to maintain compatiblity basically
 
   if (e.keyCode === 13) {
     document.getElementById("fireButton").click();

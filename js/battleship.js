@@ -165,25 +165,26 @@ function handleFireButton() {
 }
 
 function handleKeyPress(e) {
-  const fireButton = document.getElementById("fireButton");
+  //   const fireButton = document.getElementById("fireButton");
 
-  e = e || window.event;
+  //   e = e || window.event; old browswers, in modern browsers window.event is not defined, and this is not necessary. this is a fallback to maintain compatiblity basically
 
   if (e.keyCode === 13) {
-    fireButton.click();
+    document.getElementById("fireButton").click();
     return false;
   }
 }
 
-// init - the function called when the page has completed loading
+// init - the function called when the page has completed loading, like all the other shit stylesheets, images, etc
 window.onload = init;
 
 function init() {
+
   const fireButton = document.getElementById("fireButton");
   fireButton.onclick = handleFireButton;
 
   const guessInput = document.getElementById("guessInput");
-  guessInput.onkeypress = handleKeyPress;
+  guessInput.onkeydown = handleKeyPress;
 
   model.generateShipLocations();
 }

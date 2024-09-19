@@ -10,7 +10,7 @@ const model = {
     { locations: [0, 0, 0], hits: ["", "", ""] },
   ],
 
-  fire: function (guess) {
+  fire(guess) {
     for (let i = 0; i < this.numShips; i++) {
       const ship = this.ships[i];
       const index = ship.locations.indexOf(guess);
@@ -35,7 +35,7 @@ const model = {
     return false;
   },
 
-  isSunk: function (ship) {
+  isSunk(ship) {
     for (let i = 0; i < this.shipLength; i++) {
       if (ship.hits[i] !== "hit") {
         return false;
@@ -44,7 +44,7 @@ const model = {
     return true;
   },
 
-  generateShipLocations: function () {
+  generateShipLocations() {
     let locations;
     for (let i = 0; i < this.numShips; i++) {
       do {
@@ -56,7 +56,7 @@ const model = {
     console.log(this.ships);
   },
 
-  generateShip: function () {
+  generateShip() {
     const direction = Math.floor(Math.random() * 2);
     let row, col;
 
@@ -81,7 +81,7 @@ const model = {
     return newShipLocations;
   },
 
-  collision: function (locations) {
+  collision(locations) {
     for (let i = 0; i < this.numShips; i++) {
       const ship = this.ships[i];
       for (let j = 0; j < locations.length; j++) {
@@ -95,17 +95,17 @@ const model = {
 };
 
 const view = {
-  displayMessage: function (msg) {
+  displayMessage(msg) {
     const messageArea = document.getElementById("messageArea");
     messageArea.innerHTML = msg;
   },
 
-  displayHit: function (location) {
+  displayHit(location) {
     const cell = document.getElementById(location);
     cell.setAttribute("class", "hit");
   },
 
-  displayMiss: function (location) {
+  displayMiss(location) {
     const cell = document.getElementById(location);
     cell.setAttribute("class", "miss");
   },
@@ -114,7 +114,7 @@ const view = {
 const controller = {
   guesses: 0,
 
-  processGuess: function (guess) {
+  processGuess(guess) {
     const location = parseGuess(guess);
     if (location) {
       this.guesses++;
@@ -128,7 +128,6 @@ const controller = {
   },
 };
 
-// helper function to parse a guess from the user
 function parseGuess(guess) {
   const alphabet = ["A", "B", "C", "D", "E", "F", "G"];
 
@@ -155,7 +154,7 @@ function parseGuess(guess) {
   return null;
 }
 
-// event handlers
+// my event handlers
 function handleFireButton() {
   const guessInput = document.getElementById("guessInput");
   const guess = guessInput.value.toUpperCase();
@@ -176,7 +175,7 @@ function handleKeyPress(e) {
   }
 }
 
-// init - called when the page has completed loading
+// init - the function called when the page has completed loading
 window.onload = init;
 
 function init() {

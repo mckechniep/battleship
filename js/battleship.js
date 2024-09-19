@@ -177,7 +177,7 @@ function handleKeyPress(e) {
   }
 }
 
-// init - the function called when the page has completed loading, like all the other shit stylesheets, images, etc
+// init - called when the page has completed loading, like all the other shit stylesheets, images, etc
 window.onload = init;
 
 function init() {

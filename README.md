@@ -12,7 +12,7 @@ Created with HTML, CSS, JavaScript.
 
 ## Wireframe
 
-
+![Picture of handdrawn wireframe](batteship/wireframe.jpg)
 
 
 ### Sources:
